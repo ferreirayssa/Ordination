@@ -4,10 +4,10 @@ import java.util.*;
 import java.util.function.Consumer;
 
 import com.av1.avaliacao_1.bubble.BubbleSort;
-//import com.av1.avaliacao_1.heap.HeapSort;
+import com.av1.avaliacao_1.heap.HeapSortExample;
 import com.av1.avaliacao_1.insertion.InsertionSort;
 import com.av1.avaliacao_1.merge.MergeSort;
-//import com.av1.avaliacao_1.quick.QuickSort;
+import com.av1.avaliacao_1.quick.QuickSortExample;
 import com.av1.avaliacao_1.selection.SelectionSort;
 
 public class Avaliacao1Application {
@@ -34,8 +34,8 @@ public class Avaliacao1Application {
             testar("Insertion", base, InsertionSort::sort);
             testar("Selection", base, SelectionSort::sort);
             testar("Merge",     base, MergeSort::sort);
-        //    testar("Quick",     base, QuickSort::sort);
-    //        testar("Heap",      base, HeapSort::sort);
+            testar("Quick",     base, QuickSortExample::sort);
+            testar("Heap",      base, HeapSortExample::sort);
 
             System.out.println();
         }
