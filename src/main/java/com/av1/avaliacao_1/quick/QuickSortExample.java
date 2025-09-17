@@ -21,10 +21,18 @@ public class QuickSortExample {
 
     private static void quickSort(int[] arr, int low, int high) {
         if (low < high) {
-            int pi = partition(arr, low, high);
+            int pi = randomizedPartition(arr, low, high);
             quickSort(arr, low, pi - 1);
             quickSort(arr, pi + 1, high);
         }
+    }
+
+    private static int randomizedPartition(int[] arr, int low, int high) {
+        int pivotIdx = low + new Random().nextInt(high - low + 1);
+        int temp = arr[pivotIdx];
+        arr[pivotIdx] = arr[high];
+        arr[high] = temp;
+        return partition(arr, low, high);
     }
 
     private static int partition(int[] arr, int low, int high) {
