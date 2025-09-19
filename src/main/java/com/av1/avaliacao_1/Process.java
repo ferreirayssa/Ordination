@@ -9,19 +9,19 @@ import java.nio.file.Paths;
 import java.util.Arrays;
 import java.util.Random;
 
-// seus algoritmos
+
 import com.av1.avaliacao_1.bubble.BubbleSort;
 import com.av1.avaliacao_1.insertion.InsertionSort;
 import com.av1.avaliacao_1.selection.SelectionSort;
 import com.av1.avaliacao_1.merge.MergeSort;
-import com.av1.avaliacao_1.quick.QuickSortExample;   // <- usa seu nome
-import com.av1.avaliacao_1.heap.HeapSortExample;     // <- usa seu nome
+import com.av1.avaliacao_1.quick.QuickSortExample;
+import com.av1.avaliacao_1.heap.HeapSortExample;     
 
-public class BenchmarkExecutor {
+public class Process {
 
-    private static final String PLAN_CSV  = "src/main/resources/static/benchmark_plan.csv"; // gerado antes
-    private static final String OUT_CSV   = "src/main/resources/static/ench_results.csv";  // resultados
-    private static final long   SEED      = 42L;                  // reprodutível
+    private static final String PLAN_CSV  = "src/main/resources/static/process.csv"; 
+    private static final String OUT_CSV   = "src/main/resources/static/results.csv";  
+    private static final long   SEED      = 42L;                  
 
     public static void main(String[] args) throws Exception {
         if (!Files.exists(Paths.get(PLAN_CSV))) {
@@ -36,7 +36,7 @@ public class BenchmarkExecutor {
             out.write("size,dataset,algorithm,time_ms,status");
             out.newLine();
 
-            String header = br.readLine(); // pula cabeçalho do plano
+            String header = br.readLine();
             if (header == null) {
                 System.err.println("CSV de plano vazio.");
                 return;
@@ -143,24 +143,14 @@ public class BenchmarkExecutor {
 
     // -------------------- dispatch de algoritmos --------------------
 
-    private static final int N2_SAFE_LIMIT = 200_000; // evita travar com O(n^2)
-
     private static void runAlgorithm(int[] arr, String algorithm) {
-        boolean isN2 = algorithm.equals("Bubble")
-                    || algorithm.equals("Insertion")
-                    || algorithm.equals("Selection");
-
-        if (isN2 && arr.length > N2_SAFE_LIMIT) {
-            throw new SkipException("N > " + N2_SAFE_LIMIT + " para algoritmo O(n^2)");
-        }
-
         switch (algorithm) {
             case "Bubble":    BubbleSort.sort(arr); break;
             case "Insertion": InsertionSort.sort(arr); break;
             case "Selection": SelectionSort.sort(arr); break;
             case "Merge":     MergeSort.sort(arr); break;
-            case "Quick":     QuickSortExample.sort(arr); break;  // seus nomes
-            case "Heap":      HeapSortExample.sort(arr); break;   // seus nomes
+            case "Quick":     QuickSortExample.sort(arr); break; 
+            case "Heap":      HeapSortExample.sort(arr); break; 
             default: throw new IllegalArgumentException("Algoritmo inválido: " + algorithm);
         }
     }

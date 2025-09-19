@@ -11,7 +11,7 @@ public class MergeSort {
         int m = (l + r) >>> 1;
         sortRec(a, aux, l, m);
         sortRec(a, aux, m + 1, r);
-        if (a[m] <= a[m + 1]) return; // já intercalado
+        if (a[m] <= a[m + 1]) return;
         merge(a, aux, l, m, r);
     }
 
@@ -20,6 +20,6 @@ public class MergeSort {
         int i = l, j = m + 1, k = l;
         while (i <= m && j <= r) a[k++] = (aux[i] <= aux[j]) ? aux[i++] : aux[j++];
         while (i <= m) a[k++] = aux[i++];
-        // resto da direita já está no lugar
+       
     }
 }
