@@ -68,22 +68,16 @@ Siga os passos abaixo para rodar o projeto em sua IDE.
 ---
 
 ## 📂 Estrutura de Arquivos
-``
+
 ├── pom.xml
 ├── origem/principal/
 │   ├── java/com/av1/avaliacao_1/
-│   │   ├── Avaliacao1Application.java
 │   │   ├── Gráfico.java
 │   │   ├── PDF.java
-│   │   ├── RelatorioPdf.java
 │   │   └── Processo.java
-│   ├── mesclar/
-│   │   └── MergeSort.java
 │   └── recursos/
 │       ├── Resultados.pdf (Gerado após a execução de PDF.java)
 │       └── estatico/
-│           ├── benchmark_plan.csv
 │           ├── processo.csv
 │           └── resultados.csv (Gerado após a execução de Processo.java)
 └── README.md
-``
