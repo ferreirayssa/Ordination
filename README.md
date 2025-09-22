@@ -68,7 +68,7 @@ Siga os passos abaixo para rodar o projeto em sua IDE.
 ---
 
 ## 📂 Estrutura de Arquivos
-.
+
 ├── pom.xml
 ├── origem/principal/
 │   ├── java/com/av1/avaliacao_1/
