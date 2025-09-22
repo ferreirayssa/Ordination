@@ -66,18 +66,3 @@ Siga os passos abaixo para rodar o projeto em sua IDE.
 5.  Para gerar o relatório em PDF, **execute a classe `PDF.java`**. O arquivo `Resultados.pdf` será criado na pasta `recursos`.
 
 ---
-
-## 📂 Estrutura de Arquivos
-
-├── pom.xml
-├── origem/principal/
-│   ├── java/com/av1/avaliacao_1/
-│   │   ├── Gráfico.java
-│   │   ├── PDF.java
-│   │   └── Processo.java
-│   └── recursos/
-│       ├── Resultados.pdf (Gerado após a execução de PDF.java)
-│       └── estatico/
-│           ├── processo.csv
-│           └── resultados.csv (Gerado após a execução de Processo.java)
-└── README.md
