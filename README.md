@@ -66,5 +66,3 @@ Siga os passos abaixo para rodar o projeto em sua IDE.
 5.  Para gerar o relatório em PDF, **execute a classe `PDF.java`**. O arquivo `Resultados.pdf` será criado na pasta `recursos`.
 
 ---
-
-## 📂 Estrutura de Arquivos
